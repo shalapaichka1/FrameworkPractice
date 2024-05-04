@@ -128,18 +128,29 @@ export default {
     <div class="filter-artist filter-category">
       <div class="filter-artist-header filter-headers">
         <p>artist</p>
-        <img
-          v-if="!useStore().isDarkTheme"
-          @mouseup="showArtistFilter = !showArtistFilter"
-          :src="showArtistFilter ? './../../public/minus.svg' : './../../public/plus.svg'"
-          alt="+"
-        />
-        <img
-          v-else
-          @mouseup="showArtistFilter = !showArtistFilter"
-          :src="showArtistFilter ? minusLightThemeSRC : plusLightThemeSRC"
-          alt="+"
-        />
+        <div v-if="useStore().isDarkTheme">
+          <img
+            v-if="showArtistFilter"
+            @mouseup="showArtistFilter = !showArtistFilter"
+            :src="minusLightThemeSRC"
+            alt="-"
+          />
+          <img
+            v-else
+            @mouseup="showArtistFilter = !showArtistFilter"
+            :src="plusLightThemeSRC"
+            alt="+"
+          />
+        </div>
+        <div v-else>
+          <img
+            v-if="showArtistFilter"
+            @mouseup="showArtistFilter = !showArtistFilter"
+            :src="minusSRC"
+            alt="+"
+          />
+          <img v-else @mouseup="showArtistFilter = !showArtistFilter" :src="plusSRC" alt="+" />
+        </div>
       </div>
       <div v-if="showArtistFilter ? true : false" class="filter-input artist-input">
         <select
