@@ -132,13 +132,13 @@ export default {
           <img
             v-if="showArtistFilter"
             @mouseup="showArtistFilter = !showArtistFilter"
-            :src="minusLightThemeSRC"
+            src="../../public/minus-light-theme.svg"
             alt="-"
           />
           <img
             v-else
             @mouseup="showArtistFilter = !showArtistFilter"
-            :src="plusLightThemeSRC"
+            src="../../public/plus-light-theme.svg"
             alt="+"
           />
         </div>
@@ -146,10 +146,15 @@ export default {
           <img
             v-if="showArtistFilter"
             @mouseup="showArtistFilter = !showArtistFilter"
-            :src="minusSRC"
+            src="../../public/minus.svg"
             alt="+"
           />
-          <img v-else @mouseup="showArtistFilter = !showArtistFilter" :src="plusSRC" alt="+" />
+          <img
+            v-else
+            @mouseup="showArtistFilter = !showArtistFilter"
+            src="../../public/plus.svg"
+            alt="+"
+          />
         </div>
       </div>
       <div v-if="showArtistFilter ? true : false" class="filter-input artist-input">
@@ -174,13 +179,17 @@ export default {
         <img
           v-if="!useStore().isDarkTheme"
           @mouseup="showLocationFilter = !showLocationFilter"
-          :src="showLocationFilter ? minusSRC : plusSRC"
+          :src="showLocationFilter ? '../../public/minus.svg' : '../../public/plus.svg'"
           alt="+"
         />
         <img
           v-else
           @mouseup="showLocationFilter = !showLocationFilter"
-          :src="showLocationFilter ? minusLightThemeSRC : plusLightThemeSRC"
+          :src="
+            showLocationFilter
+              ? '../../public/minus-light-theme.svg'
+              : '../../public/plus-light-theme.svg'
+          "
           alt="+"
         />
       </div>
@@ -206,13 +215,17 @@ export default {
         <img
           v-if="!useStore().isDarkTheme"
           @mouseup="showYearFilter = !showYearFilter"
-          :src="showYearFilter ? minusSRC : plusSRC"
+          :src="showYearFilter ? '../../public/minus.svg' : '../../public/plus.svg'"
           alt="+"
         />
         <img
           v-else
           @mouseup="showYearFilter = !showYearFilter"
-          :src="showYearFilter ? minusLightThemeSRC : plusLightThemeSRC"
+          :src="
+            showYearFilter
+              ? '../../public/minus-light-theme.svg'
+              : '../../public/plus-light-theme.svg'
+          "
           alt="+"
         />
       </div>
