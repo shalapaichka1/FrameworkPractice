@@ -1,0 +1,34 @@
+$color-white: #ffffff;
+$color-secondary-white: #fcfcfc;
+$color-primary-black: #121212;
+$color-secondary-black: #1a1818;
+$color-secondary-white: #fcfcfc;
+$color-primary-light-gray: #dedede;
+$color-primary-dark-gray: #575757;
+$color-secondary-gray: #9c9c9c;
+$color-accent-red: #9b4b4b;
+$color-accent-gold: #ab8956;
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 700;
+  src: url(./fonts/Inter-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Urbanist';
+  font-weight: 400;
+  src: url(./fonts/Urbanist-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Cormorant SC';
+  font-weight: 500;
+  src: url(./fonts/CormorantSC-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Inter-light';
+  font-weight: 300;
+  src: url(./fonts/Inter-Light.ttf);
+}
