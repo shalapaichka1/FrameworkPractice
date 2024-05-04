@@ -9,6 +9,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/FrameworkPractice',
   plugins: [vue(), vueJsx()],
   resolve: {
     extensions: ['.ts', '.js', '.vue', '.json'],
