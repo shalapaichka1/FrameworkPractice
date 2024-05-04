@@ -131,7 +131,7 @@ export default {
         <img
           v-if="!useStore().isDarkTheme"
           @mouseup="showArtistFilter = !showArtistFilter"
-          :src="showArtistFilter ? minusSRC : plusSRC"
+          :src="showArtistFilter ? '../../public/minus.svg' : '../../public/plus.svg'"
           alt="+"
         />
         <img
