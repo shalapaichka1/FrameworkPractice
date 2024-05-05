@@ -147,7 +147,7 @@ export default {
             v-if="showArtistFilter"
             @mouseup="showArtistFilter = !showArtistFilter"
             src="../../public/minus.svg"
-            alt="+"
+            alt="-"
           />
           <img
             v-else
@@ -176,22 +176,34 @@ export default {
     <div class="filter-location filter-category">
       <div class="filter-location-header filter-headers">
         <p>location</p>
-        <img
-          v-if="!useStore().isDarkTheme"
-          @mouseup="showLocationFilter = !showLocationFilter"
-          :src="showLocationFilter ? '../../public/minus.svg' : '../../public/plus.svg'"
-          alt="+"
-        />
-        <img
-          v-else
-          @mouseup="showLocationFilter = !showLocationFilter"
-          :src="
-            showLocationFilter
-              ? '../../public/minus-light-theme.svg'
-              : '../../public/plus-light-theme.svg'
-          "
-          alt="+"
-        />
+        <div v-if="useStore().isDarkTheme">
+          <img
+            v-if="showLocationFilter"
+            @mouseup="showLocationFilter = !showLocationFilter"
+            src="../../public/minus-light-theme.svg"
+            alt="-"
+          />
+          <img
+            v-else
+            @mouseup="showLocationFilter = !showLocationFilter"
+            src="../../public/plus-light-theme.svg"
+            alt="+"
+          />
+        </div>
+        <div v-else>
+          <img
+            v-if="showLocationFilter"
+            @mouseup="showLocationFilter = !showLocationFilter"
+            src="../../public/minus.svg"
+            alt="-"
+          />
+          <img
+            v-else
+            @mouseup="showLocationFilter = !showLocationFilter"
+            src="../../public/plus.svg"
+            alt="+"
+          />
+        </div>
       </div>
       <div v-if="showLocationFilter ? true : false" class="filter-input locations-input">
         <select
@@ -212,22 +224,34 @@ export default {
     <div class="filter-year filter-category">
       <div class="filter-year-header filter-headers">
         <p>year</p>
-        <img
-          v-if="!useStore().isDarkTheme"
-          @mouseup="showYearFilter = !showYearFilter"
-          :src="showYearFilter ? '../../public/minus.svg' : '../../public/plus.svg'"
-          alt="+"
-        />
-        <img
-          v-else
-          @mouseup="showYearFilter = !showYearFilter"
-          :src="
-            showYearFilter
-              ? '../../public/minus-light-theme.svg'
-              : '../../public/plus-light-theme.svg'
-          "
-          alt="+"
-        />
+        <div v-if="useStore().isDarkTheme">
+          <img
+            v-if="showYearFilter"
+            @mouseup="showYearFilter = !showYearFilter"
+            src="../../public/minus-light-theme.svg"
+            alt="-"
+          />
+          <img
+            v-else
+            @mouseup="showYearFilter = !showYearFilter"
+            src="../../public/plus-light-theme.svg"
+            alt="+"
+          />
+        </div>
+        <div v-else>
+          <img
+            v-if="showYearFilter"
+            @mouseup="showYearFilter = !showYearFilter"
+            src="../../public/minus.svg"
+            alt="-"
+          />
+          <img
+            v-else
+            @mouseup="showYearFilter = !showYearFilter"
+            src="../../public/plus.svg"
+            alt="+"
+          />
+        </div>
       </div>
 
       <div v-if="showYearFilter ? true : false" class="filter-input year-inputs">
